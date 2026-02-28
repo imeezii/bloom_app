@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'dashboard.dart';
+import 'home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     Timer(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const BloomDashboard()),
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
     });
   }
@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0F0F1A),
+      backgroundColor: const Color(0xFF1A1A2E),
       body: Center(
         child: FadeTransition(
           opacity: _fadeAnimation,
@@ -48,9 +48,9 @@ class _SplashScreenState extends State<SplashScreen>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Icon(
-                Icons.auto_awesome,
+                Icons.restaurant_menu,
                 size: 80,
-                color: Colors.purpleAccent,
+                color: Color(0xFFFF6B6B),
               ),
               const SizedBox(height: 20),
               Text(
@@ -60,6 +60,15 @@ class _SplashScreenState extends State<SplashScreen>
                   fontWeight: FontWeight.bold,
                   letterSpacing: 8,
                   color: Colors.white.withOpacity(0.9),
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                "Recipe Discovery",
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Color(0xFFFF6B6B),
+                  letterSpacing: 2,
                 ),
               ),
             ],
